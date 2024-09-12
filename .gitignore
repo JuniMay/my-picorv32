@@ -1,0 +1,7 @@
+/.vscode
+
+*.vcd
+*.bin
+*.hex
+
+.DS_Store
