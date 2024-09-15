@@ -43,6 +43,9 @@ In VSCode, the following settings are necessary for rust-analyzer to check the f
 }
 ```
 
-## About
+The constraint file is `system.xdc`, which is for [Alinx AX7035B](https://www.en.alinx.com/Product/FPGA-Development-Boards/Artix-7/AX7035B.html). You may need to modify it for your own board.
 
-The constraint file and vivado settings are not yet uploaded. I will update them soon.
+To check the output bytes of the firmware, an Integrated Logic Analyzer (ILA) is used in Vivado. I
+set up the ILA with post-synthesis netlist, by setting up the debug ports in the top module[^1].
+
+[^1]: An [article](https://www.cnblogs.com/WenGalois123/p/16565305.html) about the usage of ILA in Vivado.

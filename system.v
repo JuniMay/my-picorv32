@@ -2,16 +2,22 @@
 
 module system (
 	input            clk,
-	input            resetn,
-	output           trap,
-	output reg [7:0] out_byte,
-	output reg       out_byte_en
+	input            resetn
 );
 	// set this to 0 for better timing but less performance/MHz
 	parameter FAST_MEMORY = 1;
 
 	// 4096 32bit words = 16kB memory
 	parameter MEM_SIZE = 4096;
+	
+	// trap, out_byte and out_byte_en are used for vivado ila.
+
+	(* dont_touch = "yes " *)
+	wire           trap;
+	(* dont_touch = "yes " *)
+	reg [7:0] out_byte;
+	(* dont_touch = "yes " *)
+	reg       out_byte_en;
 
 	wire mem_valid;
 	wire mem_instr;
